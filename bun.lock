@@ -6,7 +6,7 @@
       "name": "phase-0-foundation",
       "devDependencies": {
         "@eslint/js": "^10.0.1",
-        "@types/bun": "latest",
+        "@types/bun": "^1.3.10",
         "@typescript-eslint/eslint-plugin": "^8.56.1",
         "@typescript-eslint/parser": "^8.56.1",
         "eslint": "^10.0.2",
