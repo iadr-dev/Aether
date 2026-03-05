@@ -6,8 +6,6 @@
       "name": "phase-0-foundation",
       "devDependencies": {
         "@types/bun": "latest",
-      },
-      "peerDependencies": {
         "typescript": "^5.9.3",
       },
     },
