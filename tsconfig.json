@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["bun-types"],
+    "baseUrl": ".",
+    "paths": {
+      "@/state/*": ["src/state/*"],
+      "@/perception/*": ["src/perception/*"],
+      "@/cortex/*": ["src/cortex/*"],
+      "@/limbs/*": ["src/limbs/*"],
+      "@/alpha/*": ["src/alpha/*"],
+      "@/psyche/*": ["src/psyche/*"],
+      "@/financial/*": ["src/financial/*"],
+      "@/security/*": ["src/security/*"],
+      "@/audit/*": ["src/audit/*"],
+      "@/cli/*": ["src/cli/*"],
+      "@/config/*": ["src/config/*"],
+      "@/types/*": ["src/types/*"],
+      "@/utils/*": ["src/utils/*"]
+    }
+  }
+}
