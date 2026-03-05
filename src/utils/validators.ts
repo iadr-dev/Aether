@@ -108,7 +108,12 @@ export function isCortexContext(value: unknown): value is CortexContext {
 // PERCEPTION SIGNALS
 // ============================================================================
 
-const SIGNAL_PRIORITIES: SignalPriority[] = ["LOW", "MEDIUM", "HIGH", "CRITICAL"];
+const SIGNAL_PRIORITIES: SignalPriority[] = [
+  "LOW",
+  "MEDIUM",
+  "HIGH",
+  "CRITICAL",
+];
 
 export function isSignalPriority(value: unknown): value is SignalPriority {
   return isString(value) && SIGNAL_PRIORITIES.includes(value as SignalPriority);
@@ -168,7 +173,9 @@ export function isStrategy(value: unknown): value is Strategy {
     isNumber(value.expectedValue) &&
     isNumber(value.createdAt) &&
     isString(value.status) &&
-    ["ACTIVE", "PAUSED", "COMPLETED", "FAILED"].includes(value.status as string) &&
+    ["ACTIVE", "PAUSED", "COMPLETED", "FAILED"].includes(
+      value.status as string,
+    ) &&
     isObject(value.metadata)
   );
 }
@@ -232,7 +239,9 @@ export function isEpisodicMemory(value: unknown): value is EpisodicMemory {
     value.tier === "EPISODIC" &&
     isString((value as EpisodicMemory).eventType) &&
     isString((value as EpisodicMemory).outcome) &&
-    ["SUCCESS", "FAILURE", "NEUTRAL"].includes((value as EpisodicMemory).outcome)
+    ["SUCCESS", "FAILURE", "NEUTRAL"].includes(
+      (value as EpisodicMemory).outcome,
+    )
   );
 }
 
