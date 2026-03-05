@@ -2,51 +2,31 @@
 
 **The Sovereign Wealth Intelligence**
 
-An autonomous agent for sovereign wealth intelligence and financial analysis.
+⚠️ **Phase 0: Foundation - In Development**
 
-## Status
+AETHER will be an autonomous agent for sovereign wealth intelligence and financial analysis.
 
-🚧 **Phase 0: Foundation** - Project setup in progress
+## Current Status
 
-## Quick Start
+Phase 0 complete - project structure and tooling configured.
+
+## Developer Quick Start
 
 ### Prerequisites
 
-- [Bun](https://bun.sh) (latest version)
+- [Bun](https://bun.sh)
 
-### Installation
+### Setup
 
 ```bash
 bun install
 ```
 
-### Development
+### Development Commands
 
 ```bash
-# Lint code
-bun run lint
-
-# Format code
-bun run format
-```
-
-## Project Structure
-
-```
-src/
-├── state/      # State management
-├── perception/ # Data ingestion
-├── cortex/     # Decision engine
-├── limbs/      # Action execution
-├── alpha/      # Strategy generation
-├── psyche/     # Self-reflection
-├── financial/  # Financial analysis
-├── security/   # Security layer
-├── audit/      # Audit logging
-├── cli/        # CLI interface
-├── config/     # Configuration
-├── types/      # Type definitions
-└── utils/      # Utilities
+bun run lint    # Check code quality
+bun run format  # Format code
 ```
 
 ## License
