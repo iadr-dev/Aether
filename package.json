@@ -1,12 +1,9 @@
 {
   "name": "phase-0-foundation",
-  "module": "index.ts",
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
+    "@types/bun": "latest",
     "typescript": "^5.9.3"
   }
 }
