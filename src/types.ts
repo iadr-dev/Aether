@@ -11,13 +11,13 @@
  * Agent operational states
  */
 export type AgentState =
-  | 'IDLE'      // Waiting for signals
-  | 'HUNTING'   // Cortex active, executing strategies
-  | 'CRITICAL'  // Low balance, earning-focused
-  | 'DISTRESS'  // Near-zero balance, broadcasting for help
-  | 'DEAD'      // Zero balance, paused
-  | 'DORMANT'   // Manual pause by operator
-  | 'FUSED';    // Merged with other agents
+  | "IDLE" // Waiting for signals
+  | "HUNTING" // Cortex active, executing strategies
+  | "CRITICAL" // Low balance, earning-focused
+  | "DISTRESS" // Near-zero balance, broadcasting for help
+  | "DEAD" // Zero balance, paused
+  | "DORMANT" // Manual pause by operator
+  | "FUSED"; // Merged with other agents
 
 /**
  * State transition event
@@ -38,12 +38,12 @@ export interface StateTransition {
  * Cortex reasoning phases
  */
 export type CortexPhase =
-  | 'PERCEIVE'    // Ingest signals from Perception Mesh
-  | 'ANALYZE'     // Parallel analysis streams
-  | 'STRATEGIZE'  // Generate strategies via Alpha Engine
-  | 'EXECUTE'     // Dispatch Limbs in parallel
-  | 'OBSERVE'     // Collect results
-  | 'INTEGRATE';  // Learn and update memory
+  | "PERCEIVE" // Ingest signals from Perception Mesh
+  | "ANALYZE" // Parallel analysis streams
+  | "STRATEGIZE" // Generate strategies via Alpha Engine
+  | "EXECUTE" // Dispatch Limbs in parallel
+  | "OBSERVE" // Collect results
+  | "INTEGRATE"; // Learn and update memory
 
 /**
  * Cortex spiral execution context
@@ -63,18 +63,18 @@ export interface CortexContext {
 /**
  * Signal priority levels
  */
-export type SignalPriority = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
+export type SignalPriority = "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
 
 /**
  * Signal source types
  */
 export type SignalType =
-  | 'MARKET'      // Exchange prices, volume, liquidity
-  | 'SOCIAL'      // Social platforms, sentiment
-  | 'NEWS'        // Web-crawled news
-  | 'CHAIN'       // On-chain events
-  | 'WEB'         // Domain monitoring, opportunities
-  | 'AGENT';      // Inter-agent messages
+  | "MARKET" // Exchange prices, volume, liquidity
+  | "SOCIAL" // Social platforms, sentiment
+  | "NEWS" // Web-crawled news
+  | "CHAIN" // On-chain events
+  | "WEB" // Domain monitoring, opportunities
+  | "AGENT"; // Inter-agent messages
 
 /**
  * Perception signal from any feed
@@ -97,13 +97,13 @@ export interface PerceptionSignal {
  * Strategy types for earning
  */
 export type StrategyType =
-  | 'PREDICTION'    // Prediction markets
-  | 'YIELD'         // On-chain yield farming
-  | 'ARBITRAGE'     // Price differences
-  | 'DOMAIN'        // Domain intelligence
-  | 'PRODUCT'       // Autonomous products
-  | 'CONTENT'       // Content generation
-  | 'SERVICE';      // Agent services
+  | "PREDICTION" // Prediction markets
+  | "YIELD" // On-chain yield farming
+  | "ARBITRAGE" // Price differences
+  | "DOMAIN" // Domain intelligence
+  | "PRODUCT" // Autonomous products
+  | "CONTENT" // Content generation
+  | "SERVICE"; // Agent services
 
 /**
  * Strategy definition
@@ -111,12 +111,12 @@ export type StrategyType =
 export interface Strategy {
   id: string;
   type: StrategyType;
-  edge: number;              // Expected edge percentage
-  capital: number;           // Allocated capital in USD
-  horizon: string;           // Time horizon (e.g., "14 days")
-  expectedValue: number;     // Expected profit in USD
+  edge: number; // Expected edge percentage
+  capital: number; // Allocated capital in USD
+  horizon: string; // Time horizon (e.g., "14 days")
+  expectedValue: number; // Expected profit in USD
   createdAt: number;
-  status: 'ACTIVE' | 'PAUSED' | 'COMPLETED' | 'FAILED';
+  status: "ACTIVE" | "PAUSED" | "COMPLETED" | "FAILED";
   metadata: Record<string, unknown>;
 }
 
@@ -143,12 +143,12 @@ export interface Position {
  * Memory tier types
  */
 export type MemoryTier =
-  | 'WORKING'      // Current session (in-RAM)
-  | 'EPISODIC'     // Significant events
-  | 'SEMANTIC'     // Categorized facts
-  | 'PROCEDURAL'   // Step-by-step procedures
-  | 'MARKET'       // Price history, patterns
-  | 'STRATEGIC';   // Strategy outcomes
+  | "WORKING" // Current session (in-RAM)
+  | "EPISODIC" // Significant events
+  | "SEMANTIC" // Categorized facts
+  | "PROCEDURAL" // Step-by-step procedures
+  | "MARKET" // Price history, patterns
+  | "STRATEGIC"; // Strategy outcomes
 
 /**
  * Base memory entry
@@ -158,7 +158,7 @@ export interface MemoryEntry {
   tier: MemoryTier;
   timestamp: number;
   content: string;
-  importance: number;        // 0-100 score
+  importance: number; // 0-100 score
   metadata: Record<string, unknown>;
 }
 
@@ -166,7 +166,7 @@ export interface MemoryEntry {
  * Working memory (session-scoped)
  */
 export interface WorkingMemory extends MemoryEntry {
-  tier: 'WORKING';
+  tier: "WORKING";
   sessionId: string;
   goals: string[];
 }
@@ -175,25 +175,25 @@ export interface WorkingMemory extends MemoryEntry {
  * Episodic memory (events)
  */
 export interface EpisodicMemory extends MemoryEntry {
-  tier: 'EPISODIC';
+  tier: "EPISODIC";
   eventType: string;
-  outcome: 'SUCCESS' | 'FAILURE' | 'NEUTRAL';
+  outcome: "SUCCESS" | "FAILURE" | "NEUTRAL";
 }
 
 /**
  * Semantic memory (facts)
  */
 export interface SemanticMemory extends MemoryEntry {
-  tier: 'SEMANTIC';
+  tier: "SEMANTIC";
   category: string;
-  embedding?: number[];      // Vector embedding
+  embedding?: number[]; // Vector embedding
 }
 
 /**
  * Procedural memory (procedures)
  */
 export interface ProceduralMemory extends MemoryEntry {
-  tier: 'PROCEDURAL';
+  tier: "PROCEDURAL";
   procedureName: string;
   steps: string[];
   successCount: number;
@@ -204,7 +204,7 @@ export interface ProceduralMemory extends MemoryEntry {
  * Market memory (financial data)
  */
 export interface MarketMemory extends MemoryEntry {
-  tier: 'MARKET';
+  tier: "MARKET";
   symbol: string;
   priceHistory: Array<{ timestamp: number; price: number }>;
   correlations: Record<string, number>;
@@ -214,7 +214,7 @@ export interface MarketMemory extends MemoryEntry {
  * Strategic memory (strategy outcomes)
  */
 export interface StrategicMemory extends MemoryEntry {
-  tier: 'STRATEGIC';
+  tier: "STRATEGIC";
   strategyType: StrategyType;
   pnl: number;
   lessons: string[];
@@ -256,14 +256,14 @@ export interface LimbResult {
  * Audit entry types
  */
 export type AuditEventType =
-  | 'STATE_CHANGE'
-  | 'LIMB_CALL'
-  | 'TRANSACTION'
-  | 'STRATEGY_CREATED'
-  | 'STRATEGY_CLOSED'
-  | 'MEMORY_WRITE'
-  | 'CONFIG_CHANGE'
-  | 'FUSION_EVENT';
+  | "STATE_CHANGE"
+  | "LIMB_CALL"
+  | "TRANSACTION"
+  | "STRATEGY_CREATED"
+  | "STRATEGY_CLOSED"
+  | "MEMORY_WRITE"
+  | "CONFIG_CHANGE"
+  | "FUSION_EVENT";
 
 /**
  * Audit log entry with Merkle chain
@@ -272,9 +272,9 @@ export interface AuditEntry {
   id: string;
   eventType: AuditEventType;
   timestamp: number;
-  actor: string;              // Who/what triggered this
-  action: string;             // What happened
+  actor: string; // Who/what triggered this
+  action: string; // What happened
   data: Record<string, unknown>;
-  previousHash: string;       // Hash of previous entry
-  currentHash: string;        // Hash of this entry
+  previousHash: string; // Hash of previous entry
+  currentHash: string; // Hash of this entry
 }
