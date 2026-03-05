@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": ["ES2022"],
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["bun-types"],
+    "baseUrl": ".",
+    "paths": {
+      "@/state/*": ["src/state/*"],
+      "@/perception/*": ["src/perception/*"],
+      "@/cortex/*": ["src/cortex/*"],
+      "@/limbs/*": ["src/limbs/*"],
+      "@/alpha/*": ["src/alpha/*"],
+      "@/psyche/*": ["src/psyche/*"],
+      "@/financial/*": ["src/financial/*"],
+      "@/security/*": ["src/security/*"],
+      "@/audit/*": ["src/audit/*"],
+      "@/cli/*": ["src/cli/*"],
+      "@/config/*": ["src/config/*"],
+      "@/types/*": ["src/types/*"],
+      "@/utils/*": ["src/utils/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
