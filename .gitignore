@@ -1,7 +1,8 @@
 # Dependencies
 node_modules/
+.pnp.*
 
-# Build artifacts
+# Build outputs
 dist/
 build/
 *.tsbuildinfo
@@ -9,8 +10,10 @@ build/
 # Logs
 logs/
 *.log
+npm-debug.log*
+bun-debug.log*
 
-# Secrets
+# Environment & Secrets
 .env
 .env.*
 !.env.example
@@ -18,9 +21,19 @@ logs/
 *.pem
 secrets/
 
-# Runtime
+# Runtime & Cache
+.aether/runtime/
+.aether/cache/
 .aether/logs/
-.aether/memory/
+*.pid
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
 
 # Git
 .worktrees/
